@@ -269,7 +269,6 @@ class _CupertinoControlsState extends State<CupertinoControls>
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
                           _buildPlayPause(controller, iconColor, barHeight),
-                          _buildLive(iconColor),
                         ],
                       )
                     : Row(
@@ -293,16 +292,6 @@ class _CupertinoControlsState extends State<CupertinoControls>
             ),
           ),
         ),
-      ),
-    );
-  }
-
-  Widget _buildLive(Color iconColor) {
-    return Padding(
-      padding: const EdgeInsets.only(right: 12.0),
-      child: Text(
-        'LIVE',
-        style: TextStyle(color: iconColor, fontSize: 12.0),
       ),
     );
   }
