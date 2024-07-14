@@ -292,10 +292,7 @@ class _MaterialDesktopControlsState extends State<MaterialDesktopControls>
                   children: <Widget>[
                     _buildPlayPause(controller),
                     _buildMuteButton(controller),
-                    if (chewieController.isLive)
-                      const Expanded(child: Text('LIVE'))
-                    else
-                      _buildPosition(iconColor),
+                    if (!chewieController.isLive) _buildPosition(iconColor),
                     const Spacer(),
                     if (chewieController.showControls &&
                         chewieController.subtitle != null &&
