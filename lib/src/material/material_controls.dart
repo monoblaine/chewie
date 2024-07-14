@@ -267,10 +267,7 @@ class _MaterialControlsState extends State<MaterialControls>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    if (chewieController.isLive)
-                      const Expanded(child: Text('LIVE'))
-                    else
-                      _buildPosition(iconColor),
+                    if (!chewieController.isLive) _buildPosition(iconColor),
                     if (chewieController.allowMuting)
                       _buildMuteButton(controller),
                     const Spacer(),
