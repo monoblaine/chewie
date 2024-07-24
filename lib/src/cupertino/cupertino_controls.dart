@@ -245,45 +245,11 @@ class _CupertinoControlsState extends State<CupertinoControls>
           color: Colors.transparent,
           alignment: Alignment.bottomCenter,
           margin: EdgeInsets.all(marginSize),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(10.0),
-            child: BackdropFilter(
-              filter: ui.ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
-              child: Container(
-                height: barHeight,
-                color: backgroundColor,
-                child:
-                    chewieController.isLive
-                        ? Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            _buildPlayPause(controller, iconColor, barHeight),
-                          ],
-                        )
-                        : Row(
-                          children: <Widget>[
-                            _buildSkipBack(iconColor, barHeight),
-                            _buildPlayPause(controller, iconColor, barHeight),
-                            _buildSkipForward(iconColor, barHeight),
-                            _buildPosition(iconColor),
-                            _buildProgressBar(),
-                            _buildRemaining(iconColor),
-                            _buildSubtitleToggle(iconColor, barHeight),
-                            if (chewieController.allowPlaybackSpeedChanging)
-                              _buildSpeedButton(
-                                controller,
-                                iconColor,
-                                barHeight,
-                              ),
-                            if (chewieController.additionalOptions != null &&
-                                chewieController
-                                    .additionalOptions!(context)
-                                    .isNotEmpty)
-                              _buildOptionsButton(iconColor, barHeight),
-                          ],
-                        ),
-              ),
-            ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              _buildPlayPause(controller, iconColor, barHeight),
+            ],
           ),
         ),
       ),
